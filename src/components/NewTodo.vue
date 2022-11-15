@@ -2,7 +2,8 @@
     <div class="ent">
         <input style="width: 200px; margin:20px" class="inp" type="text" placeholder="Enter Your ToDo :)"
             v-model="todo.text">
-        <button @click="enter($event)" class="btn">Add</button>
+        <router-link to="/" @click="enter($event)"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Add</router-link>
     </div>
     <p id="empty"></p>
 </template>
@@ -22,7 +23,7 @@ export default {
                 done: false,
                 edit: false
             },
-        }   
+        }
     },
     methods: {
         ...mapMutations([
@@ -44,7 +45,12 @@ export default {
                 empty.innerHTML = 'Fill field'
             }
         },
-    }
+    },
+    // computed:{
+    //     fillingField(){
+    //         return empty.innerHTML = ''
+    //     }
+    // }
 }
 
 

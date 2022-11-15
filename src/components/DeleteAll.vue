@@ -1,26 +1,31 @@
 <template>
-    <button @click="deleteAll">Delete All ({{ todos.length }})</button>
+    <button @click="deleteAll(status)"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-6">
+        Delete {{ status }} ({{ len }})
+    </button>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
-import { mapGetters } from "vuex";
 
 export default {
     name: 'DeleteAll',
     props: {
-        item: Object
+        len: Number,
+        status: String
     },
     methods: {
         ...mapMutations([
             'deleteAll'
         ])
     },
-    computed: {
-        ...mapGetters({
-            todos: 'getAllTodos',
-        })
-    }
+    // created() {
+    //     console.log(this.props);
+    // }
 }
 
 </script>
+
+<style>
+
+</style>

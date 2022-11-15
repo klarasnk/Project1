@@ -1,21 +1,21 @@
 <template>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbTlmvJ_MnaoDOBx8hGaFKO-fGM7lnQqjY2A&usqp=CAU">
-  <nav>
-    <router-link to="/">All</router-link>|
-    <router-link to="/done">Done</router-link>|
-    <router-link to="/todo">Todo</router-link>
-  </nav>
-  <NewTodo />
-  <router-view />
-  <DeleteAll />
+  <div class="w-full flex items-center flex-col	">
+    <img src="@/assets/images.jpeg">
+    <nav>
+      <router-link to="/">All</router-link>|
+      <router-link to="/done">Done</router-link>|
+      <router-link to="/todo">Todo</router-link>
+    </nav>
+    <NewTodo />
+    <router-view />
+  </div>
 </template>
 <script>
-import DeleteAll from './components/DeleteAll.vue';
 import NewTodo from './components/NewTodo.vue';
 
 
 export default {
-  components: { NewTodo, DeleteAll }
+  components: { NewTodo, }
 }
 </script>
 <style>
@@ -43,7 +43,7 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: red;
+  color: #ba0228;
 
 }
 
@@ -53,7 +53,17 @@ img {
 
 }
 
+button {
+  margin: 10px 0;
+}
+
 .inp {
   width: 300px;
 }
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
 </style>
